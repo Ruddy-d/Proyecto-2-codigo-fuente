@@ -1,163 +1,149 @@
-#Equipo: Stalin Perez, Angel Perez y Felix Terrero
+**#Equipo: Stalin Perez, Angel Perez y Felix Terrero**
 
-Clasificación Avanzada de Cáncer de Mama
+🏥 Clasificación Avanzada de Cáncer de Mama
 
-Proyecto de Machine Learning con múltiples modelos, análisis visual y evaluación completa
+Proyecto de Machine Learning con comparación de modelos y análisis visual
 
-📌 Descripción General
+**📌 1. Descripción General**
 
-Este proyecto implementa un sistema de clasificación para el dataset Breast Cancer Wisconsin usando varios modelos de Machine Learning.
-Incluye:
+Este proyecto implementa un sistema de clasificación para el dataset Breast Cancer Wisconsin utilizando varios modelos de Machine Learning.
 
-Preparación y estandarización de datos
+🎯 Objetivo: comparar distintos algoritmos y determinar cuál ofrece mejor rendimiento para apoyar el diagnóstico temprano del cáncer de mama.
 
-Entrenamiento de varios clasificadores
+**⚙️ 2. ¿Qué hace el proyecto?**
 
-Validación cruzada
+El script realiza los siguientes pasos:
 
-Curvas ROC
+1️⃣ Carga el dataset de cáncer de mama
+2️⃣ Explora la información básica del dataset
+3️⃣ Divide los datos en entrenamiento y prueba (80% / 20%)
+4️⃣ Estandariza las características con StandardScaler
+5️⃣ Entrena varios modelos de Machine Learning
+6️⃣ Evalúa cada modelo con distintas métricas
+7️⃣ Genera visualizaciones comparativas
+8️⃣ Realiza la predicción de un caso real
+9️⃣ Muestra un ranking final de modelos
 
-Matriz de confusión
+**🧠 3. Modelos Utilizados**
 
-Importancia de características
+Se entrenan y comparan los siguientes modelos:
 
-Análisis exploratorio de datos (EDA)
+🔹 K-Nearest Neighbors (KNN)
 
-Comparación de modelos
+🌲 Random Forest
 
-Predicción de un caso real del dataset
+📐 Support Vector Machine (SVM)
 
-Ajuste de hiperparámetros con GridSearchCV
+📊 Regresión Logística
 
-El objetivo es identificar el modelo con mejor rendimiento para apoyar el diagnóstico temprano del cáncer de mama.
+🚀 Gradient Boosting
 
-🧠 Modelos Utilizados
+Todos los modelos utilizan datos escalados para asegurar una comparación justa.
 
-KNN
+**📊 4. Métricas de Evaluación**
 
-Random Forest
+Cada modelo se evalúa utilizando:
 
-SVM
+✅ Accuracy
 
-Logistic Regression
+🔁 Validación cruzada (5-Fold)
 
-Gradient Boosting
+📈 AUC-ROC
 
-Cada modelo se entrena con datos escalados y se evalúa en métricas como:
+📋 Reporte de clasificación
 
-Accuracy
+🧮 Matriz de confusión
 
-Validación cruzada (CV)
+**📈 5. Visualizaciones Generadas**
 
-AUC-ROC
+El proyecto genera gráficos para facilitar la interpretación:
 
-Reporte de clasificación
+📊 Comparación de precisión entre modelos
 
-📊 Visualizaciones Generadas
+📈 Curvas ROC
 
-El script produce varios gráficos en alta calidad:
+🧮 Matriz de confusión del mejor modelo
 
-Comparación de precisión entre modelos
+🔁 Validación cruzada con desviación estándar
 
-Curvas ROC
+🔍 Importancia de características (si el modelo lo permite)
 
-Matriz de confusión del mejor modelo
+🥧 Distribución de clases del dataset
 
-Validación cruzada con desviación estándar
+📉 Histogramas de características relevantes
 
-Importancia de características (si el modelo lo permite)
-
-Distribución de clases
-
-Archivos generados:
+🗂️ Archivos generados:
 
 analisis_cancer_completo.png
 
 distribucion_caracteristicas.png
 
-🔍 Flujo del Proyecto
+**🔄 6. Flujo del Proyecto**
 
-Carga y exploración del dataset
+1️⃣ Carga del dataset
+2️⃣ Exploración de datos
+3️⃣ División Train/Test
+4️⃣ Escalado de datos
+5️⃣ Entrenamiento de modelos
+6️⃣ Evaluación de resultados
+7️⃣ Visualización gráfica
+8️⃣ Predicción de un nuevo caso
+9️⃣ Ranking final
 
-Separación Train/Test (80/20)
+**🏆 7. Resultados Destacados**
 
-Estandarización con StandardScaler
+🥇 Los modelos ensemble (Random Forest y Gradient Boosting) presentan mejor rendimiento
 
-Entrenamiento de los modelos
+🎯 Precisión aproximada entre 95% y 99%
 
-Evaluación y comparación
+🔑 Identificación de las características más influyentes
 
-Visualización gráfica
+**📁 8. Requisitos del Proyecto**
 
-Predicción de un nuevo caso
+🐍 Python 3.8 o superior
 
-Ajuste de hiperparámetros para SVM
-
-Reporte final y ranking de modelos
-
-🏆 Resultados Destacados
-
-Modelos tipo ensemble (Random Forest, Gradient Boosting) suelen rendir mejor.
-
-El sistema alcanza una precisión aproximada del 95–99%, dependiendo del modelo.
-
-Se identifican las características más relevantes en la clasificación.
-
-⚙️ Ajuste de Hiperparámetros (GridSearchCV)
-
-Se realiza una búsqueda en rejilla sobre:
-
-C: [0.1, 1, 10, 100]
-gamma: ['scale', 'auto', 0.001, 0.01, 0.1]
-kernel: ['rbf', 'linear']
-
-
-El mejor modelo ajustado se evalúa nuevamente en test.
-
-📁 Requisitos
-
-Python 3.8+
-
-Bibliotecas:
+📦 Bibliotecas necesarias:
 
 numpy
+
 pandas
+
 matplotlib
+
 seaborn
+
 scikit-learn
 
-
-Instalación recomendada:
+📥 Instalación recomendada:
 
 pip install numpy pandas matplotlib seaborn scikit-learn
 
-▶️ Ejecución
+**▶️ 9. Ejecución del Proyecto**
 
-Solo ejecuta el archivo principal:
+Ejecuta el archivo principal:
 
 python nombre_del_archivo.py
 
 
-Esto generará:
+📌 Esto generará:
 
 Resultados completos en consola
 
-Gráficos PNG
+Gráficos en formato PNG
 
-Comparaciones de modelos
+Comparación de modelos
 
-Rendimiento del modelo optimizado
+Resumen del mejor modelo
 
-📝 Notas Finales
+**📝 10. Notas Finales**
 
 Este proyecto es útil para:
 
-Aprender evaluación comparativa de modelos
+📘 Aprender comparación de modelos de Machine Learning
 
-Entender métricas clave en clasificación médica
+🧠 Comprender métricas clave en clasificación médica
 
-Practicar ajuste de hiperparámetros
+🛠️ Practicar análisis visual de datos
 
-Realizar análisis visual y explicativo
-
+❤️ Aplicar Machine Learning a un problema real de salud
 
