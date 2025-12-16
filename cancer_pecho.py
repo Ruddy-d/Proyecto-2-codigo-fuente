@@ -7,6 +7,7 @@ from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
                             roc_curve, auc, roc_auc_score)
+from sklearn.model_selection import GridSearchCV
 ####################################################################################
 import numpy as np
 import matplotlib.pyplot as plt
@@ -246,3 +247,53 @@ print(f"   tienden a ofrecer los mejores resultados en este tipo de problema mé
 print(f"\n{'=' * 80}")
 print("✅ Análisis completo finalizado. Revisa los gráficos generados.")
 print(f"{'=' * 80}\n")
+
+##############################################################################
+
+
+print(f"\n{'=' * 80}")
+print(f"⚙️ AJUSTE DE HIPERPARÁMETROS PARA {mejor_modelo_nombre}")
+print(f"{'=' * 80}\n")
+
+param_grid = {
+    'C': [0.1, 1, 10, 100],
+    'gamma': ['scale', 'auto', 0.001, 0.01, 0.1],
+    'kernel': ['rbf', 'linear']
+}
+
+grid_search = GridSearchCV(
+    SVC(probability=True, random_state=42),
+    param_grid,
+    cv=5,
+    scoring='accuracy',
+    n_jobs=-1, 
+    verbose=1
+)
+
+grid_search.fit(X_train_scaled, y_train)
+
+print("Mejores hiperparámetros encontrados:", grid_search.best_params_)
+print("Mejor precisión en CV (Grid Search): {:.2%}".format(grid_search.best_score_))
+
+best_svm_model = grid_search.best_estimator_
+y_pred_tuned = best_svm_model.predict(X_test_scaled)
+y_proba_tuned = best_svm_model.predict_proba(X_test_scaled)[:, 1]
+
+accuracy_tuned = accuracy_score(y_test, y_pred_tuned)
+roc_auc_tuned = roc_auc_score(y_test, y_proba_tuned)
+
+print(f"\n{'─' * 80}")
+print(f"📊 RENDIMIENTO DEL MODELO {mejor_modelo_nombre} (AJUSTADO)")
+print(f"{'─' * 80}")
+print(f"Precisión en Test (Ajustado): {accuracy_tuned:.2%}")
+print(f"AUC-ROC en Test (Ajustado): {roc_auc_tuned:.3f}")
+print("\nReporte de Clasificación (Ajustado):\n")
+print(classification_report(y_test, y_pred_tuned, target_names=datos.target_names))
+
+resultados['SVM (Ajustado)'] = {
+    'accuracy': accuracy_tuned,
+    'cv_mean': grid_search.best_score_,
+    'cv_std': 0, 
+    'roc_auc': roc_auc_tuned
+}
+
