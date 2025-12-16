@@ -30,13 +30,13 @@ Se entrenan y comparan los siguientes modelos:
 
 🔹 K-Nearest Neighbors (KNN)
 
-🌲 Random Forest
+ Random Forest
 
-📐 Support Vector Machine (SVM)
+ Support Vector Machine (SVM)
 
-📊 Regresión Logística
+ Regresión Logística
 
-🚀 Gradient Boosting
+ Gradient Boosting
 
 Todos los modelos utilizan datos escalados para asegurar una comparación justa.
 
@@ -46,31 +46,31 @@ Cada modelo se evalúa utilizando:
 
 ✅ Accuracy
 
-🔁 Validación cruzada (5-Fold)
+ Validación cruzada (5-Fold)
 
-📈 AUC-ROC
+AUC-ROC
 
-📋 Reporte de clasificación
+ Reporte de clasificación
 
-🧮 Matriz de confusión
+ Matriz de confusión
 
 **📈 5. Visualizaciones Generadas**
 
 El proyecto genera gráficos para facilitar la interpretación:
 
-📊 Comparación de precisión entre modelos
+ Comparación de precisión entre modelos
 
 📈 Curvas ROC
 
-🧮 Matriz de confusión del mejor modelo
+ Matriz de confusión del mejor modelo
 
 🔁 Validación cruzada con desviación estándar
 
 🔍 Importancia de características (si el modelo lo permite)
 
-🥧 Distribución de clases del dataset
+ Distribución de clases del dataset
 
-📉 Histogramas de características relevantes
+Histogramas de características relevantes
 
 🗂️ Archivos generados:
 
@@ -94,9 +94,9 @@ distribucion_caracteristicas.png
 
 🥇 Los modelos ensemble (Random Forest y Gradient Boosting) presentan mejor rendimiento
 
-🎯 Precisión aproximada entre 95% y 99%
+Precisión aproximada entre 95% y 99%
 
-🔑 Identificación de las características más influyentes
+Identificación de las características más influyentes
 
 **📁 8. Requisitos del Proyecto**
 
@@ -141,9 +141,9 @@ Este proyecto es útil para:
 
 📘 Aprender comparación de modelos de Machine Learning
 
-🧠 Comprender métricas clave en clasificación médica
+Comprender métricas clave en clasificación médica
 
-🛠️ Practicar análisis visual de datos
+Practicar análisis visual de datos
 
-❤️ Aplicar Machine Learning a un problema real de salud
+Aplicar Machine Learning a un problema real de salud
 
